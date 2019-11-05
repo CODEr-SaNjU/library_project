@@ -1,9 +1,7 @@
 import sqlite3
 import datetime
 from datetime import date,datetime
-
-conn = sqlite3.connect('lib_db3.db')
-
+conn = sqlite3.connect('lib_db.db')
 cur = conn.cursor()
 
 menu = '''
@@ -147,12 +145,6 @@ for row in book_list:
         cur.execute('''SELECT * FROM Users WHERE name = ?;''',[row[0]])
         udetails = cur.fetchall()
         #print('updated : ', udetails)
-
-
-
-
-
-
 conn.commit()
 conn.close()
 
